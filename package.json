@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/yucopowo/redis-cluster#readme",
   "dependencies": {
+    "ioredis": "^4.9.0",
     "redis": "^2.8.0"
   }
 }
