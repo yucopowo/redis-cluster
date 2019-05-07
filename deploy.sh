@@ -9,12 +9,13 @@ do
  echo "this is $i"
  cp -r redis $i
 
- echo "port $i
-    cluster-config-file nodes.conf
-    daemonize yes
-    cluster-node-timeout 5000
-    appendonly yes
-    cluster-enabled yes" >> $i/redis.conf
+echo "port $i
+cluster-config-file nodes.conf
+daemonize yes
+stop-writes-on-bgsave-error no
+cluster-node-timeout 5000
+appendonly yes
+cluster-enabled yes" >> $i/redis.conf
 
 
 done

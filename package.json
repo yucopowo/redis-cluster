@@ -1,0 +1,26 @@
+{
+  "name": "redis-cluster",
+  "version": "1.0.0",
+  "description": "一键搭建本地Redis集群环境",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yucopowo/redis-cluster.git"
+  },
+  "keywords": [
+    "node",
+    "redis"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yucopowo/redis-cluster/issues"
+  },
+  "homepage": "https://github.com/yucopowo/redis-cluster#readme",
+  "dependencies": {
+    "redis": "^2.8.0"
+  }
+}
