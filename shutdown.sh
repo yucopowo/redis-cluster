@@ -1,24 +1,14 @@
 #!/bin/sh 
 
-basedir=`cd $(dirname $0); pwd -P`
-echo $basedir
+__dirname=`cd $(dirname $0); pwd -P`
+echo $__dirname
+cd $__dirname/dist
 
-cd $basedir/7001
-./src/redis-cli -h 127.0.0.1 -p 7001 shutdown
+for i in 7001 7002 7003 7004 7005 7006
+do
+ echo "this is $i"
 
-cd $basedir/7002
-./src/redis-cli -h 127.0.0.1 -p 7002 shutdown
+ ./$i/src/redis-cli -h 127.0.0.1 -p $i shutdown
 
-cd $basedir/7003
-./src/redis-cli -h 127.0.0.1 -p 7003 shutdown
-
-cd $basedir/7004
-./src/redis-cli -h 127.0.0.1 -p 7004 shutdown
-
-cd $basedir/7005
-./src/redis-cli -h 127.0.0.1 -p 7005 shutdown
-
-cd $basedir/7006
-./src/redis-cli -h 127.0.0.1 -p 7006 shutdown
-
+done
 

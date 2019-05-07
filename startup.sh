@@ -1,23 +1,12 @@
-#!/bin/sh 
+#!/usr/bin/env bash
 
-basedir=`cd $(dirname $0); pwd -P`
-echo $basedir
+__dirname=`cd $(dirname $0); pwd -P`
+echo $__dirname
+cd $__dirname/dist
 
-cd $basedir/7001
-./src/redis-server ./redis.conf
-
-cd $basedir/7002
-./src/redis-server ./redis.conf
-
-cd $basedir/7003
-./src/redis-server ./redis.conf
-
-cd $basedir/7004
-./src/redis-server ./redis.conf
-
-cd $basedir/7005
-./src/redis-server ./redis.conf
-
-cd $basedir/7006
-./src/redis-server ./redis.conf
-
+for i in 7001 7002 7003 7004 7005 7006
+do
+ echo "this is $i"
+ cd $__dirname/dist/$i
+ ./src/redis-server ./redis.conf
+done
